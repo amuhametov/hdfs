@@ -2,6 +2,7 @@ package hdfs
 
 import (
 	"os"
+	"errors"
 	"time"
 
 	hdfs "github.com/colinmarc/hdfs/v2/internal/protocol/hadoop_hdfs"
