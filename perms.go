@@ -55,7 +55,7 @@ func (c *Client) Chtimes(name string, atime time.Time, mtime time.Time) error {
 	}
 
 	if (time.Time{}) == atime && atime == mtime {
-		return &os.PathError{"chtimes", name, interpretException(err)}
+		return &os.PathError{"chtimes", name, errors.New("atime or mtime must be set")}
 	}
 
 	if (time.Time{}) != atime {
@@ -77,3 +77,4 @@ func (c *Client) Chtimes(name string, atime time.Time, mtime time.Time) error {
 
 	return nil
 }
+
